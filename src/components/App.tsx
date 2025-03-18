@@ -1,24 +1,21 @@
-import Avatar from 'components/Avatar'
-import logo from 'assets/logo.svg'
-
-const randoms = [
-  [1, 2],
-  [3, 4, 5],
-  [6, 7]
-]
+import { Header } from './Header/Header'
+import { TabButton } from './TabButton/TabButton'
 
 function App() {
+  const handleSelect = () => {
+    console.log('Tab selected')
+  }
   return (
-    <div className="flex flex-col">
-      <button>
-        button 1
-      </button>
-      <button>
-        button 2
-      </button>
-      <button>
-        button 3
-      </button>
+    <div className='flex flex-col items-center p-4'>
+      <Header />
+      <section>
+        <h2>Examples</h2>
+        <menu className='flex flex-row space-x-2'>
+          <TabButton onSelect={handleSelect}>Tab 1</TabButton>
+          <TabButton onSelect={handleSelect}>Tab 2</TabButton>
+          <TabButton onSelect={handleSelect}>Tab 3</TabButton>
+        </menu>
+      </section>
     </div>
   )
 }
